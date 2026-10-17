@@ -38,7 +38,12 @@ app.get('/api/articulos', async ( req, res ) => {
     }
 });
 
-app.listen(PORT, () => {
-    console.log('Servidor listo');
-    console.log(`Endpoint listo en http://localhost:${PORT}/api/articulos`);
-});
+// Solo se debe levantar el puerto si no se está ejecutando test
+if ( process.env.NODE_ENV !== 'test' ) {
+    app.listen(PORT, () => {
+        console.log('Servidor listo');
+        console.log(`Endpoint listo en http://localhost:${PORT}/api/articulos`);
+    });
+}
+
+module.exports = app;
