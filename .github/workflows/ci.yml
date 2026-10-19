@@ -29,5 +29,25 @@ jobs:
       - name: Instalar dependencias
         run: npm ci
 
-      - name: Ejecutar Pruebas Unitarias
+      - name: Ejecutar Pruebas Backend
         run: npm run test:unit
+
+  frontend-tests:
+    name: Frontend Unit Tests (Java)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./frontend
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+          cache: 'maven'
+
+      - name: Compilar y Ejecutar Pruebas Frontend
+        run: mvn test
