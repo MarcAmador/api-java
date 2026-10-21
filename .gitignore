@@ -16,6 +16,10 @@ frontend/.mvn/
 .vscode/
 *.class
 
+# Scripts y archivos local
+iniciar-backend.bat
+*.log
+
 # Sistema Operativo
 Thumbs.db
 .DS_Store
