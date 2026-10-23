@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node src/server.js",
     "dev": "nodemon src/server.js",
+    "tunnel": "node scripts/tunnel.js",
     "test": "jest --detectOpenHandles --runInBand",
     "test:unit": "jest tests/articulos.unit.test.js --detectOpenHandles --runInBand",
     "test:integration": "jest tests/articulos.integration.test.js --detectOpenHandles --runInBand"
@@ -22,6 +23,7 @@
   },
   "devDependencies": {
     "jest": "^30.5.2",
+    "localtunnel": "^2.0.2",
     "nodemon": "^3.1.14",
     "supertest": "^7.3.1"
   }
